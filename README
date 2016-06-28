@@ -1,0 +1,7 @@
+This is hopefully a temporary overlay for porting ppc64le patches to the
+tree and upstream.  It shouldn't be used as a substitute for getting stuff
+directly into the tree or upstream, only as a temporary testing ground.
+
+Expect that it will be deleted in the future.
+
+Anthony G. Basile <blueness@gentoo.org>		2016-06-28
