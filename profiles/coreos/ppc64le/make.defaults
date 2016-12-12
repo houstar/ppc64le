@@ -1,0 +1,7 @@
+CFLAGS="-O2 -pipe -mabi=elfv2"
+CHOST="powerpc64le-unknown-linux-gnu"
+CXXFLAGS="${CFLAGS}"
+FFLAGS="${CFLAGS}"
+FCFLAGS="${CFLAGS}"
+LDFLAGS_ppc64="-m elf64lppc"
+USE="altivec ibm"

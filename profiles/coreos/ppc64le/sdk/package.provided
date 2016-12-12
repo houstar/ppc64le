@@ -1,0 +1,10 @@
+sys-firmware/ipxe-1.0.0_p20130925
+dev-python/beaker-1.5.4-r1
+dev-python/mako-0.7.0
+app-emulation/acbuild-9999
+sys-boot/gnu-efi-3.0.2
+sys-boot/efibootmgr-0.6.0
+app-crypt/sbsigntool-0.6-r3
+sys-firmware/edk2-ovmf-99999
+sys-boot/shim-9999
+app-crypt/efitools-1.5.3_p20150420

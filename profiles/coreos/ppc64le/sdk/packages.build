@@ -1,0 +1,4 @@
+net-libs/libmicrohttpd
+dev-lang/spidermonkey
+dev-libs/libevent
+net-libs/libnfsidmap

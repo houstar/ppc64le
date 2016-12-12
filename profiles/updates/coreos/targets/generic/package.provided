@@ -1,0 +1,19 @@
+# Copyright (c) 2009 The Chromium OS Authors. All rights reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+# Packages that are pulled in via RDEPEND without a use flag to
+# disable them and we have no need/use for them in prod images.
+
+# pulled in by app-crypt/pinentry
+app-admin/eselect-pinentry-0.3
+app-eselect/eselect-pinentry-0.4
+
+# pulled in by app-editors/vim
+app-admin/eselect-vi-1.1.5
+app-eselect/eselect-vi-1.1.7-r1
+
+# pulled in by app-admin/sudo
+app-misc/editor-wrapper-4
+
+# pulled in by dev-libs/cyrus-sasl
+net-mail/mailbase-1.1

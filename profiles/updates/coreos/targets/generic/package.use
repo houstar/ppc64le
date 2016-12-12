@@ -1,0 +1,47 @@
+# Copyright (c) 2009 The Chromium OS Authors. All rights reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+app-admin/rsyslog	-ssl
+app-editors/vim		minimal
+dev-lang/python		-berkdb gdbm
+dev-libs/dbus-glib	tools
+dev-libs/elfutils	-utils
+dev-libs/nss		-utils
+dev-libs/openssl	pkcs11
+dev-util/perf		-doc -demangle -tui -ncurses -perl -python
+dev-util/perf-next	-doc -demangle -tui -ncurses -perl -python
+net-analyzer/tcpdump	-chroot
+net-misc/dhcp	        -server
+net-misc/iperf		threads
+net-misc/ntp            caps
+sys-apps/busybox	-selinux
+sys-apps/smartmontools	minimal
+sys-block/parted        device-mapper
+sys-fs/lvm2		-lvm1 -readline
+sys-libs/ncurses	minimal
+sys-libs/pam        -berkdb
+sys-libs/gdbm		berkdb
+
+# enable journal gateway and container features, avoid pulling in gnutls
+sys-apps/systemd audit importd http nat -ssl
+
+# epoll is needed for systemd-journal-remote to work. coreos/bugs#919
+net-libs/libmicrohttpd epoll -ssl
+
+sys-boot/syslinux       -custom-cflags
+
+sys-apps/flashrom -dediprog -ft2232_spi -serprog
+
+# break dependency loop between pkg-config and glib
+dev-util/pkgconfig internal-glib
+
+# minimize risk removing unneeded patches and networking support
+app-shells/bash -net vanilla
+
+# disable nss utilities
+dev-libs/nss -utils
+
+# enable seccomp support in docker
+app-emulation/docker seccomp
+app-emulation/containerd seccomp
+sys-libs/libseccomp static-libs

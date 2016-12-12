@@ -1,0 +1,15 @@
+coreos-base/update_engine delta_generator
+sys-apps/flashrom dediprog ft2232_spi serprog
+
+dev-vcs/git pcre
+dev-lang/ruby berkdb
+
+dev-util/catalyst ccache
+dev-lang/python sqlite
+
+# only required until gtk-doc and friends is pruned from everyone's SDKs
+dev-libs/libxml2 python
+
+# for qemu
+app-arch/bzip2 static-libs
+

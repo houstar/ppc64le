@@ -1,0 +1,2 @@
+portage-stable:hardened/linux/amd64/no-multilib
+:coreos/base

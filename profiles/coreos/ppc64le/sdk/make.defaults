@@ -1,0 +1,1 @@
+GRUB_PLATFORMS="-efi-64 -pc -xen -arm64 -coreboot -efi-32 -emu ieee1275"

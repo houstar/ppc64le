@@ -1,0 +1,6 @@
+dev-libs/glib static-libs
+sys-apps/attr static-libs
+sys-libs/zlib static-libs
+app-emulation/qemu static-user
+>=sys-libs/libsemanage-9999 python
+>=sys-libs/libselinux-9999 python

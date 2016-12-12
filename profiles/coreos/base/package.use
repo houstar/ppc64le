@@ -1,0 +1,81 @@
+# The USE flags specified in this file are applied to packages
+# for all linux targets. In ChromeOS, that means they are applied
+# to the host packages in the chroot, as well as packages built for a
+# target board.
+
+app-arch/tar		minimal
+app-crypt/mit-krb5	-keyutils
+dev-embedded/libftdi	-cxx
+dev-libs/nss		utils
+dev-libs/dbus-glib	tools
+dev-libs/protobuf 	-python
+dev-libs/libxml2	-python
+dev-perl/GD             png
+dev-util/perf		tui -doc
+dev-vcs/git		cvs subversion webdav curl bash-completion
+dev-vcs/subversion	-dso webdav-serf
+media-libs/freeimage	-cxx
+media-libs/gd           png
+media-libs/libmtp       -crypt
+# We don't want any driver/hw rendering on the host
+media-sound/alsa-utils	-libsamplerate minimal
+sci-geosciences/gpsd	-cxx
+sys-devel/gettext	-git
+app-emulation/qemu	aio caps curl jpeg ncurses png python seccomp threads uuid vhost-net virtfs vnc xattr qemu_softmmu_targets_x86_64
+
+sys-apps/gptfdisk -icu
+
+# for profile migration
+dev-libs/apr-util -gdbm
+sys-libs/gdbm berkdb
+
+dev-vcs/git -perl -iconv
+
+net-analyzer/nmap ncat -lua
+
+# removes mta dependencies
+app-admin/sudo -sendmail
+
+# use lzma which is the default on non-gentoo systems
+sys-apps/systemd curl gcrypt lzma -lz4
+
+# disable kernel config detection and module building
+net-firewall/ipset -modules
+
+dev-lang/spidermonkey minimal
+
+# do not pull in x11-misc/shared-mime-info
+dev-libs/glib -mime
+
+# keep grub build simple
+sys-boot/grub -multislot -nls
+
+# disable "high performance ssh" patch, turn on kerberos
+net-misc/openssh -hpn kerberos
+
+# xz and lzo are required to run grub tests
+sys-fs/squashfs-tools lzo xz
+
+# make the kernel version discoverable via the traditional gentoo symlink
+sys-kernel/coreos-sources symlink
+
+# set build options for ssdp
+net-nds/openldap minimal sasl
+sys-libs/glibc nscd
+net-dns/bind-tools gssapi
+
+# disable database build because otherwise it tries to generate a database in /etc
+dev-libs/cyrus-sasl kerberos -berkdb -gdbm
+
+# don't build manpages for sssd
+sys-auth/sssd -manpages -python kerberos gssapi ssh
+
+# needed for realmd build
+sys-auth/polkit introspection
+
+# enable logging command-line options in update_engine
+dev-cpp/glog gflags
+
+# enable rpc for rpc.rquotad
+sys-fs/quota rpc
+
